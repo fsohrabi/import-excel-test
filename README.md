@@ -41,8 +41,19 @@ Now, you can access the project on your local host.
 
 In this project, we have utilized jobs to handle time-consuming tasks asynchronously. This ensures that users don't experience delays while performing operations such as importing Excel files.
 
+### Handling Large Excel Files
+
+When dealing with large Excel files, it's essential to split them into smaller files for easier processing. For instance, if a file exceeds one million rows, dividing it into smaller files can facilitate efficient processing. This segmentation allows for parallel processing and prevents overwhelming the system.
+It's crucial to consider CPU and memory usage. Laravel Excel helps in handling large files efficiently by utilizing chunking, dividing the work into smaller parts to prevent overwhelming the system.
+
+### Caching Layers
+
+In larger projects, implementing caching layers before database operations can enhance system stability. By utilizing caching mechanisms, such as Redis or Memcached, repetitive and resource-intensive database queries can be avoided, reducing the risk of system crashes.
+
+### Writing Unit Tests
+
+While endpoint tests are crucial for API testing, adding more unit tests can further enhance code quality. Adopting Test-Driven Development (TDD) practices enables developers to write more comprehensive unit tests, ensuring better code coverage and overall system reliability.
+
 Moreover, it's essential to implement authentication in real-world projects to ensure data security and user privacy.
 
-When dealing with large Excel files, it's crucial to consider CPU and memory usage. Laravel Excel helps in handling large files efficiently by utilizing chunking, dividing the work into smaller parts to prevent overwhelming the system.
-
-In summary, this README covers the setup process and additional considerations for handling Excel imports efficiently in a Laravel project.
+In summary, this README covers the setup process and additional considerations for handling real-world project efficiently in a Laravel project.
