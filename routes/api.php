@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::post('employee', [EmployeeController::class, 'importEmployees'])->name('employee-import');
-// Route::delete('employee/{id}', [EmployeeController::class, 'destroy']);
-// Route::resource('employee', EmployeeController::class)->only(['index', 'show','destroy']);
 Route::resource('employee',EmployeeController::class)->only([
     'index', 'show','destroy','store'
 ]);
