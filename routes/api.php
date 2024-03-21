@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Employee\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::post('employee', [EmployeeController::class, 'importEmployees'])->name('employee-import');
+// Route::delete('employee/{id}', [EmployeeController::class, 'destroy']);
+// Route::resource('employee', EmployeeController::class)->only(['index', 'show','destroy']);
+Route::resource('employee',EmployeeController::class)->only([
+    'index', 'show','destroy','store'
+]);
+ 
+Route::resource('employee', EmployeeController::class)->except([
+    'update','create'
+]);
